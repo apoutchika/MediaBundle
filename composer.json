@@ -23,6 +23,7 @@
         "knplabs/gaufrette": "^0.1.9",
         "jms/serializer": "^0.16.0"
     },
+    "minimum-stability": "dev",
     "suggest": {
         "egeloen/ckeditor-bundle": "Use ApoutchikaMediaBundle with CKEditor"
     },
