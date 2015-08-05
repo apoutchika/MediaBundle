@@ -26,6 +26,28 @@ class ApoutchikaMediaExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        if (!isset ($config['context']['default'])) {
+            // set default extensions for 
+            // default context and trusted extensions
+            // TODO: manage it in configuration file !
+            $config['contexts']['default'] = array(
+                // Documents
+                'doc', 'xls', 'txt', 'pdf', 'rtf', 'docx', 'xlsx', 'ppt', 'pptx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml',
+
+                // Images
+                'gif', 'jpg', 'jpeg', 'png', 'svg',
+
+                // Audio
+                'mp3', 'ogg',
+
+                // Video
+                'mp4', 'avi', 'mpg', 'mpeg', 'ogv', 'webm',
+
+                // Archive
+                'zip', 'tar', 'gz', '7z', 'rar',
+            );
+        }
+
         $this->addParameters($container, array(
             'include' => $config['include'],
             'filesystems' => $config['filesystems'],

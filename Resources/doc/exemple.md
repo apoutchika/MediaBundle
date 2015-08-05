@@ -12,7 +12,7 @@ apoutchika_media:
     # default is original, you can change here
     original_dir: default
 
-    # Max width/height is 1500px
+    # if image > 1500px, resize it
     limit: 1500
 
     # Include not required for SonataAdminBundle

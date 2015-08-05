@@ -27,7 +27,7 @@ class CKEditorController extends Controller
     public function imageAction(Request $request)
     {
         return $this->render('ApoutchikaMediaBundle:CKEditor:image.html.twig', array(
-            'filter' => $this->get('apoutchika_media.filter')->addFilter(null),
+            'filter' => $this->get('apoutchika_media.filter')->set(null),
         ));
     }
 }

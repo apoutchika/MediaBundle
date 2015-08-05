@@ -33,7 +33,7 @@ abstract class Media implements MediaInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      * @Expose
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string

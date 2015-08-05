@@ -11,7 +11,7 @@
         data-apoutchika-media-filter="{{ form.vars.filter }}"
         >
         <div class="field">
-            <h4>{{ form.vars.label }}</h4>
+            <h4>{{ form.vars.label|default('Media') }}</h4>
 
             {% if form.vars.errors|length > 0 %}
                 {% for error in form.vars.errors %}

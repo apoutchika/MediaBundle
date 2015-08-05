@@ -10,8 +10,9 @@ apoutchika_media:
     # you can change css style
     css: ~ # default is in bundles/apoutchikamedia/css/main.css
 
-    # Max limit of image (width and height), in px
-    limit: ~ # ex: 1000
+    # if image > 1500px, resize it
+    limit: ~ # ex: 1000 # Optional
+
     include:
         jquery: true
         jqueryui: true

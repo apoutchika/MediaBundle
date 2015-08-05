@@ -52,7 +52,7 @@ class CKEditorController extends Controller
     public function showAction(Request $request)
     {
         // get you custom filter
-        $filterKey = $this->get('apoutchika_media.filter')->addFilter('user:'.$this->getUser()->getId());
+        $filterKey = $this->get('apoutchika_media.filter')->set('user:'.$this->getUser()->getId());
 
         // render view
         return $this->render('ApoutchikaMediaBundle:CKEditor:image.html.twig', array(
