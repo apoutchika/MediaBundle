@@ -1,0 +1,5 @@
+apoutchika_media_ckeditor_image:
+    path:     /image
+    defaults: { _controller: ApoutchikaMediaBundle:CKEditor:image }
+    requirements:
+        _method: GET

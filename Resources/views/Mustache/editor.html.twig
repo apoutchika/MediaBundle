@@ -1,0 +1,45 @@
+{% embed 'ApoutchikaMediaBundle:Mustache:modal.html.twig'%}
+    {% trans_default_domain "ApoutchikaMediaBundle" %}
+    {% block title %}
+        {#
+        {{ '{{# media.is_image }}' }}
+            {{ '{{# media.urls.78x44_focus }}' }}
+                <img src="{{ '{{ media.urls.78x44_focus }}' }}" />
+            {{ '{{/ media.urls.78x44_focus }}' }} 
+        {{ '{{/ media.is_image }}' }}
+        #}
+        {{ 'views.mustache.editor.edit'|trans }} {{ '{{ media.name }}' }}
+    {% endblock %}
+    {% block content %}
+
+        <div class="edit clearfix">
+            <div class="right"></div>
+            <div class="left">
+                <form>
+
+                    <div>
+                        <label for="apoutchika-media-editor-name">{{ 'views.mustache.editor.form.name'|trans }} :</label>
+                        <input type="text" name="name" value="{{ '{{ media.name  }}' }}" id="apoutchika-media-editor-name" />
+                    </div>
+
+
+                    {{ '{{# media.is_image }}' }}
+                        <div>
+                            <label for="apoutchika-media-editor-alt">{{ 'views.mustache.editor.form.alt'|trans }} :</label>
+                            <input type="text" name="alt" value="{{ '{{ media.alt }}' }}" id="apoutchika-media-editor-alt" />
+                        </div>
+                    {{ '{{/ media.is_image }}' }}
+                    <div>
+                        <label for="apoutchika-media-editor-description">{{ 'views.mustache.editor.form.description'|trans }} :</label>
+                        <textarea name="description" id="apoutchika-media-editor-description">{{ '{{ media.description }}' }}</textarea>
+                    </div>
+
+                    <div class="actions">
+                        <a href="#" class="btn btn-save btn-strong apoutchika-media-save">{{ 'views.mustache.editor.save'|trans }}</a>
+                        <a href="#" class="btn btn-cancel btn-strong apoutchika-media-cancel">{{ 'views.mustache.editor.cancel'|trans }}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,38 @@
+apoutchika_media_api_media:
+    path:     /
+    defaults: { _controller: ApoutchikaMediaBundle:MediaRest:getMedias }
+    requirements:
+        _method: GET
+
+apoutchika_media_api_media_show:
+    path:     /{id}
+    defaults: { _controller: ApoutchikaMediaBundle:MediaRest:getMedia }
+    requirements:
+        _method: GET
+        id: ^\d+$
+
+apoutchika_media_api_media_add:
+    path:     /
+    defaults: { _controller: ApoutchikaMediaBundle:MediaRest:postMedia }
+    requirements:
+        _method: POST
+
+apoutchika_media_api_media_edit:
+    path:     /{id}
+    defaults: { _controller: ApoutchikaMediaBundle:MediaRest:putMedia }
+    requirements:
+        _method: PUT
+        id: ^\d+$
+
+apoutchika_media_api_media_delete:
+    path:     /{id}
+    defaults: { _controller: ApoutchikaMediaBundle:MediaRest:deleteMedia }
+    requirements:
+        _method: DELETE
+        id: ^\d+$
+
+apoutchika_media_api_media_search:
+    path:     /search
+    defaults: { _controller: ApoutchikaMediaBundle:MediaRest:searchMedia }
+    requirements:
+        _method: GET

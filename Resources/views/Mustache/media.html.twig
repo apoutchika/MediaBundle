@@ -1,0 +1,28 @@
+{% trans_default_domain "ApoutchikaMediaBundle" %}
+
+<div id="{% block id %}{% endblock %}" data-apoutchika-media-id="{% block mediaid %}{{ '{{ media.id }}' }}{% endblock %}" class="media {% block class %}{% endblock %}">
+    {% block input %}{% endblock %}
+
+    <div class="actions">
+        {% block btn %}
+            {% block fieldUnselect %}<a href="#" class="btn-remove unselect" title="{{ 'views.mustache.media.unselect'|trans }}"><span class="icon icon-remove"></span></a>{% endblock %}
+
+            {% block unselect %}<a href="#" class="change apoutchika-media-unselect" title="{{ 'views.mustache.media.unselect'|trans }}"><span class="icon icon-select"></span></a>{% endblock %}
+
+            {% block select %}<a href="#" class="change apoutchika-media-select" title="{{ 'views.mustache.media.select'|trans }}"><span class="icon icon-unselect"></span></a>{% endblock %}
+
+            {% block edit %}<a href="{% block urlEdit %}#{% endblock %}" class="btn btn-edit">{{ 'views.mustache.media.edit'|trans }}</a>{% endblock %}
+
+            {% block remove %}<a href="#" class="btn btn-delete apoutchika-media-remove">{{ 'views.mustache.media.delete'|trans }}</a>{% endblock %}
+        {% endblock %}
+    </div>
+    
+    <p class="name ellipsis">
+        {{ '{{# media.is_image }}' }}
+            {{ '{{# media.urls.78x44_focus }}' }}
+                <img class="preview" src="{{ '{{ media.urls.78x44_focus }}' }}" />
+            {{ '{{/ media.urls.78x44_focus }}' }}
+        {{ '{{/ media.is_image }}' }}
+        {{ '{{ media.name }}' }}
+    </p>
+</div>

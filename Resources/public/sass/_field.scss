@@ -1,0 +1,37 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+
+.field {
+    background-color: $gainsboro;
+    padding: 15px 25px;
+    @include border-radius(20px);
+    max-width: 700px;
+
+    @include clearfix;
+
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    h4 {
+        font-family: ubuntubold, sans-serif;
+        color: $doveGray;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    input {
+        display: none;
+    }
+
+    .error {
+        margin: 0 0 10px 0;
+        color: $flamingo;
+        font-size: 16px;
+
+        .icon {
+            margin-right: 4px;
+        }
+    }
+}

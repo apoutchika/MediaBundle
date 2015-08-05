@@ -1,0 +1,36 @@
+{% embed 'ApoutchikaMediaBundle:Mustache:modal.html.twig'%}
+    {% trans_default_domain "ApoutchikaMediaBundle" %}
+    {% block title %}{{ 'views.mustache.lists.title'|trans }}{% endblock %}
+    {% block content %}
+        <div class="list">
+            <form>
+                <input placeholder="{{ 'views.mustache.lists.search'|trans }}" type="text" class="apoutchika-media-search-text" name="apoutchika-media-search-text" />
+                <div class="select-wrapper">
+                    <select class="apoutchika-media-search-type" name="apoutchika-media-search-type">
+                        <option value="0">{{ 'views.mustache.lists.type.all'|trans }}</option>
+                        <option value="{{ constant('Apoutchika\\MediaBundle\\Model\\Media::IMAGE') }}">{{ 'views.mustache.lists.type.image'|trans }}</option>
+                        <option value="{{ constant('Apoutchika\\MediaBundle\\Model\\Media::VIDEO') }}">{{ 'views.mustache.lists.type.video'|trans }}</option>
+                        <option value="{{ constant('Apoutchika\\MediaBundle\\Model\\Media::AUDIO') }}">{{ 'views.mustache.lists.type.audio'|trans }}</option>
+                        <option value="{{ constant('Apoutchika\\MediaBundle\\Model\\Media::OTHER') }}">{{ 'views.mustache.lists.type.other'|trans }}</option>
+                    </select>
+                </div>
+                <button name="search" class="btn btn-strong btn-search apoutchika-media-search-search">{{ 'views.mustache.lists.search'|trans }}</button>
+            </form>
+
+            <div class="list-header">
+                <p class="list-header-status ellipsis">Statut</p>
+                <p class="list-header-delete ellipsis">Supprimer</p>
+                <p class="list-header-edit ellipsis">Modifier</p>
+                <p class="list-header-name ellipsis">Nom du fichier</p>
+            </div>
+
+            <div class="medias">
+            </div>
+
+            <div class="clearfix">
+                <a href="{{ urlAdd }}" alt="Ajouter" class="btn btn-strong btn-add">{{ 'views.mustache.lists.add'|trans }}</a>
+            </div>
+
+        </div>
+    {% endblock %}
+{% endembed %}

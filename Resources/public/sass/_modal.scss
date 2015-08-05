@@ -1,0 +1,63 @@
+@import "compass/css3";
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $cararra;
+    @include opacity(0.9);
+    z-index: 2000;
+}
+
+.modal {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background-color: $white;
+    z-index: 2010;
+    display: block;
+    overflow: auto;
+
+    .modal-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: $doveGray;
+
+        .close {
+            float: right;
+            margin: 9px 26px 0 0;
+            @include opacity(0.5);
+
+            &:hover {
+                @include opacity(1);
+            }
+        }
+
+        h1 {
+            font-family: ubuntubold, sans-serif;
+            text-transform: uppercase;
+            color: $white;
+            line-height: 50px;
+            margin-left: 30px;
+            font-size: 20px;
+        }
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        box-shadow: none;
+        border-radius: 0;
+        min-height: 350px;
+    }
+}

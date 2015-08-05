@@ -1,0 +1,78 @@
+{% trans_default_domain "ApoutchikaMediaBundle" %}
+
+{% set rootName = "#apoutchika/media" %}
+{% set urlList  = rootName ~ "/{{ field.id }}/list" %}
+{% set urlAdd   = rootName ~ "/{{ field.id }}/add" %}
+{% set urlEdit  = rootName ~ "/edit/{{ media.id }}" %}
+
+<div id="apoutchika-media-container"></div>
+
+{# JS Translation #}
+<input type="hidden" 
+    name="trans_js_confirmDelete" 
+    id="trans_js_confirmDelete" 
+    value="{{ 'js.confirmDelete'|trans }}">
+
+<input type="hidden" 
+    name="trans_js_confirmCrop" 
+    id="trans_js_confirmCrop" 
+    value="{{ 'js.confirmCrop'|trans }}">
+
+<input type="hidden" 
+    name="trans_js_extensionNotAllowed" 
+    id="trans_js_extensionNotAllowed" 
+    value="{{ 'js.extensionNotAllowed'|trans }}">
+
+
+{# JS Urls #}
+<input 
+    type="hidden" 
+    name="apoutchikaMediaApiUrl" 
+    id="apoutchikaMediaApiUrl" 
+    value="{{ path('apoutchika_media_api_media') }}" />
+
+<input 
+    type="hidden" 
+    name="apoutchikaMediaApiUrl_search" 
+    id="apoutchikaMediaApiUrl_search" 
+    value="{{ path('apoutchika_media_api_media_search') }}" />
+
+
+
+{# JS Mustache Templates #}
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-fields">
+    {% include 'ApoutchikaMediaBundle:Mustache:fields.html.twig' with {
+        'urlAdd': urlAdd,
+        'urlList': urlList
+    } %}
+</script>
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-field">
+    {% include 'ApoutchikaMediaBundle:Mustache:field.html.twig' with {
+        'urlEdit': urlEdit
+    } %}
+</script>
+
+
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-lists">
+    {% include 'ApoutchikaMediaBundle:Mustache:lists.html.twig'  with {
+        'urlAdd': urlAdd,
+    }%}
+</script>
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-list">
+    {% include 'ApoutchikaMediaBundle:Mustache:list.html.twig' with {
+        'urlEdit': urlEdit
+    } %}
+</script>
+
+
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-add">
+    {% include 'ApoutchikaMediaBundle:Mustache:add.html.twig' %}
+</script>
+
+
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-image-editor">
+    {% include 'ApoutchikaMediaBundle:Mustache:image-editor.html.twig' %}
+</script>
+<script type="x-tmpl-mustache" charset="utf-8" id="apoutchika-media-view-editor">
+    {% include 'ApoutchikaMediaBundle:Mustache:editor.html.twig' %}
+</script>

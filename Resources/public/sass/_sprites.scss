@@ -1,0 +1,25 @@
+@import "compass/utilities/sprites";
+
+$icon: sprite-map("icon/*.png", $spacing: 4px, $layout: smart);
+
+.icon {
+    background: $icon;
+    display: inline-block;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+@each $i in sprite_names($icon){
+    .icon-#{$i} {
+        background-position: sprite-position($icon, $i);
+        @include sprite-dimensions($icon, $i);
+    }
+}
+
+
+@each $i in (select, unselect, remove, check) {
+    a:hover .icon-#{$i} {
+        @extend .icon-#{$i}-hover;
+    }
+}
+

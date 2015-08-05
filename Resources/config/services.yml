@@ -1,0 +1,88 @@
+services:
+
+    ##########################################
+    ###    MEDIA MANAGER AND MANIPULATOR   ###  
+    ##########################################
+    apoutchika_media.manager.media:
+        class: Apoutchika\MediaBundle\Manager\MediaManager
+        arguments: ["%apoutchika_media.original_dir%", "%apoutchika_media.contexts%", "%apoutchika_media.trusted_extensions%", "%apoutchika_media.limit%"]
+        calls:
+            - [ setEntityManager, [ "@doctrine.orm.entity_manager" ]]
+            - [ setClass, [ "%apoutchika_media.media_class%" ]]
+            - [ setContainer, [ "@service_container" ]]
+            - [ setFilesystemManipulator, [ "@apoutchika_media.manipulator.filesystems" ]]
+            - [ setAliasManipulatorFactory, [ "@apoutchika_media.factory.manipulator.alias" ]]
+            - [ setImagine, ["@apoutchika_media.factory.imagine"] ]
+            - [ setFilter, ["@apoutchika_media.filter"] ]
+            
+    apoutchika_media.factory.manipulator.alias:
+        class: Apoutchika\MediaBundle\Factory\AliasManipulatorFactory
+        arguments: ["%apoutchika_media.original_dir%", "%apoutchika_media.alias%"]
+
+    apoutchika_media.factory.imagine:
+        class: Imagine\Image\ImagineInterface
+        factory_class: Apoutchika\MediaBundle\Factory\ImagineFactory
+        factory_method: get
+        arguments: ["%apoutchika_media.driver%"]
+            
+    apoutchika_media.manipulator.filesystems:
+        class: Apoutchika\MediaBundle\Filesystem\FilesystemManipulator
+        arguments: ["%apoutchika_media.filesystems%"]
+            
+    apoutchika_media.filter:
+        class: Apoutchika\MediaBundle\Services\Filter
+        arguments: ["@session"]
+
+
+    #####################
+    ###    LISTENER   ###
+    #####################
+    apoutchika_media.listener.media_content:
+        class: Apoutchika\MediaBundle\Listener\MediaContentListener
+        scope: request
+        arguments: ["%apoutchika_media.include%", "%apoutchika_media.css%"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.response, method: addContent }
+        calls:
+            - [ setAssetsHelper, [ "@templating.helper.assets" ]]
+            - [ setTemplating, [ "@templating" ]]
+
+
+    #############################
+    ###    TWIG EXTENSIONS    ### 
+    #############################
+    apoutchika_media.twig.media_extension:
+        class: Apoutchika\MediaBundle\Twig\MediaExtension
+        arguments: ["@apoutchika_media.manager.media"]
+        tags:
+            - { name: twig.extension }
+
+
+    ########################
+    ###    FORM TYPES    ###  
+    ########################
+    apoutchika_media.form.media_one:
+        class: Apoutchika\MediaBundle\Form\Type\ApoutchikaMediaOneType
+        calls:
+            - [ setEntityManager, [ "@doctrine.orm.entity_manager" ] ]
+            - [ setMediaClass, [ "%apoutchika_media.media_class%" ] ]
+            - [ setContexts, [ "%apoutchika_media.contexts%" ] ]
+            - [ setFilter, [ "@apoutchika_media.filter" ] ]
+        tags:
+            - { name: form.type, alias: apoutchika_media_one }
+
+    apoutchika_media.form.media_many:
+        class: Apoutchika\MediaBundle\Form\Type\ApoutchikaMediaManyType
+        calls:
+            - [ setContexts, [ "%apoutchika_media.contexts%" ] ]
+            - [ setFilter, [ "@apoutchika_media.filter" ] ]
+        tags:
+            - { name: form.type, alias: apoutchika_media_many }
+
+    apoutchika_media.form.media_one_for_collection:
+        class: Apoutchika\MediaBundle\Form\Type\ApoutchikaMediaOneForCollectionType
+        calls:
+            - [ setEntityManager, [ "@doctrine.orm.entity_manager" ] ]
+            - [ setMediaClass, [ "%apoutchika_media.media_class%" ] ]
+        tags:
+            - { name: form.type, alias: apoutchika_media_one_for_collection }

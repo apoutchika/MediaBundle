@@ -1,0 +1,17 @@
+{% embed 'ApoutchikaMediaBundle:Mustache:media.html.twig' %}
+    {% block id %}apoutchika-media-view-field-{{ '{{ field.id }}-{{ media.id }}' }}{% endblock %}
+    {% block class %}{% endblock %}
+    {% block input %}
+        {{ '{{# isOne }}' }}
+            <input type="hidden" name="{{ '{{ field.fullName }}' }}" value="{{ '{{ media.id }}' }}" />
+        {{ '{{/ isOne }}' }}
+        {{ '{{^ isOne }}' }}
+            <input type="hidden" name="{{ '{{ field.fullName }}' }}[{{ '{{ fieldId }}' }}]" value="{{ '{{ media.id }}' }}" />
+        {{ '{{/ isOne }}' }}
+    {% endblock %}
+    {% block urlEdit %}{{ urlEdit }}{% endblock %}
+    {% block btn %}
+        {{ block('fieldUnselect') }}
+        {{ block('edit') }}
+    {% endblock %}
+{% endembed %}

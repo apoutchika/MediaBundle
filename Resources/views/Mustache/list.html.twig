@@ -1,0 +1,18 @@
+{% embed 'ApoutchikaMediaBundle:Mustache:media.html.twig' %}
+    {% block id %}apoutchika-media-view-list-{{ '{{ field.id }}-{{ media.id }}' }}{% endblock %}
+    {% block class %}{{ '{{# isActive }}active{{/ isActive }}' }}{% endblock %}
+    {% block nbBtn %}3{% endblock %}
+    {% block urlEdit %}{{ urlEdit }}{% endblock %}
+    {% block btn %}
+        {{ '{{# isActive }}' }}
+            {{ block ('unselect') }}
+        {{ '{{/ isActive }}' }}
+
+        {{ '{{^ isActive }}' }}
+            {{ block ('select') }}
+        {{ '{{/ isActive }}' }}
+
+        {{ block ('edit') }}
+        {{ block ('remove') }}
+    {% endblock %}
+{% endembed %}

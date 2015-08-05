@@ -1,0 +1,26 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+.apoutchika-media {
+    @import "compass/reset";
+    font-family: ubunturegular, sans-serif;
+
+    * {
+        @include box-sizing(border-box);
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .clearfix {
+        @include clearfix;
+        @include pie-clearfix;
+    }
+
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

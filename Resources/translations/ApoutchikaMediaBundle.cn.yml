@@ -1,0 +1,81 @@
+global:
+    loading: &LOADING 加载中
+    edit: &EDIT 修改
+    add: &ADD 加入
+    select: &SELECT 挑选 # 选中
+    extensionNotAllowed: &EXTENSION_NOT_ALLOWED %extension% 格式未授权
+    error: &ERROR 出现一个错误
+
+error:
+    fileNotFound: 文件未找到
+    mediaIdNotFound: 媒体 %id% 未找到
+    requestMustHasFilter: 此申请务必包含"filter"参数
+    requestMustHasFilterProd: *ERROR
+    requestMustHasCorrectFilter: 此申请务必包含"filter"的正确参数
+    requestMustHasCorrectFilterProd: *ERROR
+    extensionNotAllowed: *EXTENSION_NOT_ALLOWED
+
+js:
+    confirmDelete: 删除这个媒体 ?
+    confirmCrop: 删除图片未选取部分?
+    extensionNotAllowed: *EXTENSION_NOT_ALLOWED
+
+views:
+    ckeditor:
+        image:
+            title: 选择您的图片
+    form:
+        fields:
+            loadMany: 媒体加载中
+            loadOne: 媒体加载中
+        fields_base:
+            load: *LOADING
+    mustache:
+        add: 
+            title: 添加一个新媒体
+            dropMediaHere: 将选中媒体文件拖入这里
+            selectMedia: 选中您的媒体
+            orCliqueHere: 或者点击这里
+            allowedExtensions: 格式已授权 
+            load: *LOADING
+            thankWaiting: 请稍后...
+            error: 出错了
+        editor:
+            edit: *EDIT
+            image:
+                focus: 焦点
+                crop: 选择有效区域
+                valid: 完成
+                help:
+                    focus: 对焦功能帮助您自动瞄准图片中最重要部分。 每当您移动对焦位置， 此功能即可完成新焦距计算
+                    crop: 裁减您的图片如果图片构图不够理想。 如需确认此操作， 请点击按键“完成” 或在您的新构图框内，双击图片
+            form:
+                name: 姓名
+                author: 作者
+                description: 介绍
+                tag: 关键字 (用逗号隔开)
+            save: 保存
+            cancel: 取消
+        fields:
+            add: *ADD
+            select: *SELECT
+        lists:
+            title: 媒体清单
+            search: 查找
+            type:
+                all: 全部
+                image: 图片
+                video: 影像文件
+                audio: 音频文件
+                other: 其他
+            add: *ADD
+        media:
+            unselect: 取消
+            select: *SELECT
+            edit: *EDIT
+            delete: 删除
+    render:
+        other:
+            download: 下载此媒体
+        video:
+            download: 下载此影像文件

@@ -1,0 +1,80 @@
+global:
+    loading: &LOADING Chargement
+    edit: &EDIT Modifier
+    add: &ADD Ajouter
+    select: &SELECT Choisir
+    extensionNotAllowed: &EXTENSION_NOT_ALLOWED L'extension %extension% n'est pas autorisée.
+    error: &ERROR Une erreur s'est produite.
+
+error:
+    fileNotFound: Le fichier n'a pas été trouvé.
+    mediaIdNotFound: Le média %id% n'a pas été trouvé.
+    requestMustHasFilter: La requete doit avoir le paramètre "filter".
+    requestMustHasFilterProd: *ERROR
+    requestMustHasCorrectFilter: La requete doit avoir un paramètre "filter" correct.
+    requestMustHasCorrectFilterProd: *ERROR
+    extensionNotAllowed: *EXTENSION_NOT_ALLOWED
+
+js:
+    confirmDelete: Supprimer ce média ?
+    confirmCrop: Cropper l'image ?
+    extensionNotAllowed: *EXTENSION_NOT_ALLOWED
+
+views:
+    ckeditor:
+        image:
+            title: Choisissez votre image
+    form:
+        fields:
+            loadMany: Chargement des médias
+            loadOne: Chargement du média
+        fields_base:
+            load: *LOADING
+    mustache:
+        add: 
+            title: Ajouter un média
+            dropMediaHere: Glissez votre média dans cette zone
+            selectMedia: Sélectionnez votre média
+            orCliqueHere: Ou cliquez ici
+            allowedExtensions: Extensions acceptés
+            load: *LOADING
+            thankWaiting: Merci de patienter...
+            error: Une erreur est survenue
+        editor:
+            edit: *EDIT
+            image:
+                focus: Focus
+                crop: Crop
+                valid: Valider
+                help:
+                    focus: Le focus vous permet de cibler le point le plus important de votre image. A chaque déplacement, le nouveau focus est pris en compte.
+                    crop: Cropper votre image si elle est mal cadrée. Pour confirmer, cliquez sur le bouton "Valider" ou double-cliquez sur votre sélection.
+            form:
+                name: Nom
+                description: Description
+                alt: Texte alternatif
+            save: Enregistrer
+            cancel: Annuler
+        fields:
+            add: *ADD
+            select: *SELECT
+        lists:
+            title: Liste des médias
+            search: Chercher
+            type:
+                all: Tous
+                image: Image
+                video: Vidéo
+                audio: Audio
+                other: Autre
+            add: *ADD
+        media:
+            unselect: Enlever
+            select: *SELECT
+            edit: *EDIT
+            delete: Supprimer
+    render:
+        other:
+            download: Téléchargez le média
+        video:
+            download: Téléchargez la vidéo

@@ -1,0 +1,34 @@
+{% trans_default_domain "ApoutchikaMediaBundle" %}
+
+{% spaceless %}
+    <div 
+        id="apoutchika-media-{{ form.vars.id }}"
+        class="apoutchika-media"
+        data-apoutchika-media="true"
+        data-apoutchika-media-type="{{ block('type') }}"
+        data-apoutchika-media-full-name="{{ form.vars.full_name }}"
+        data-apoutchika-media-allowed_extensions="{{ form.vars.allowed_extensions|join('|') }}"
+        data-apoutchika-media-filter="{{ form.vars.filter }}"
+        >
+        <div class="field">
+            <h4>{{ form.vars.label }}</h4>
+
+            {% if form.vars.errors|length > 0 %}
+                {% for error in form.vars.errors %}
+                    <p class="error"><span class="icon icon-cross"></span>{{ error.messagePluralization is null
+                        ? error.messageTemplate|trans(error.messageParameters, 'validators')
+                        : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
+                        }}</p>
+                {% endfor %}
+            {% endif %}
+
+
+            <div class="medias">
+                <img src="{{ asset('bundles/apoutchikamedia/images/loader.gif') }}" alt="{{ 'views.form.fields_base.load'|trans({}, "ApoutchikaMediaBundle") }}"> {% block loading %}{% endblock %}
+                {{ form_widget(form) }}
+            </div>
+            {# This is one px of the sprite for preload it #}
+            <span class="icon icon-px"></span>
+        </div>
+    </div>
+{% endspaceless %}

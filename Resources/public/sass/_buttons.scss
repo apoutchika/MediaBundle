@@ -1,0 +1,43 @@
+.btn {
+    font-family: ubunturegular, sans-serif;
+    display: block;
+    float: left;
+    min-width: $btn-width;
+    height: $btn-height;
+    line-height: $btn-height - ($btn-padding * 2) - 4px;
+    padding: $btn-padding;
+    margin: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-strong {
+    font-family: ubuntubold, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+@each $btn, $color, $bg, $border in
+    (delete, $white, $burntSienna, $flamingo),
+    (edit, $doveGray, $white, $doveGray),
+    (add, $white, $arsenic, $doveGray),
+    (select, $white, $doveGray, $stack),
+    (search, $white, $doveGray, $stack),
+    (save, $white, $greenCrayola, $vistaBlue),
+    (cancel, $white, $flamingo, $monaLisa),
+    (valid, $white, $greenCrayola, $doveGray)
+    {
+
+    .btn-#{$btn} {
+        color: #{$color};
+        background-color: #{$bg};
+        border: 2px solid #{$border};
+    
+        &:hover {
+            background-color: #{$color};
+            color: #{$bg};
+            border: 2px solid #{$bg};
+        }
+    }
+}

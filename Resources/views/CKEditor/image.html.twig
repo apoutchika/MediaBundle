@@ -1,0 +1,46 @@
+{% extends 'ApoutchikaMediaBundle::base.html.twig' %}
+
+{% block title %}{{ 'views.ckeditor.image.title'|trans({}, 'ApoutchikaMediaBundle') }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/apoutchikamedia/css/main.css') }}" />
+    <link rel="stylesheet" type="text/css"  href="{{ asset('bundles/apoutchikamedia/css/jcrop.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/jquery.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/jqueryui.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/underscore.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/backbone.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/backbonejjrelational.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/mustache.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/dropzone.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/libs/jcrop.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/init.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/models.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/collections.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/viewAdd.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/viewEditor.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/viewField.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/viewList.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/routerCKEditor.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/apoutchikamedia/js/appCKEditor.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+
+{% block body %}
+
+    <div 
+        id="apoutchika-media"
+        class="apoutchika-media"
+        data-apoutchika-media-type="one"
+        data-apoutchika-media-full-name="ckeditor"
+        data-apoutchika-media-allowed_extensions="jpg|jpeg|png|gif|tiff"
+        data-apoutchika-media-filter="{{ filter }}"
+        ></div>
+
+
+    {% include 'ApoutchikaMediaBundle:Media:media.html.twig' %}
+{% endblock %}

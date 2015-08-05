@@ -1,0 +1,19 @@
+{% block apoutchika_media_many_row %}
+    {% embed "ApoutchikaMediaBundle:Form:fields_base.html.twig" with {'form': form} %}
+        {% block type %}many{% endblock %}
+        {% block loading %}{{ 'views.form.fields.loadMany'|trans({}, "ApoutchikaMediaBundle") }}{% endblock %}
+    {% endembed %}
+{% endblock %}
+
+
+{% block apoutchika_media_one_row %}
+    {% embed "ApoutchikaMediaBundle:Form:fields_base.html.twig" with {'form': form} %}
+        {% block type %}one{% endblock %}
+        {% block loading %}{{ 'views.form.fields.loadOne'|trans({}, "ApoutchikaMediaBundle") }}{% endblock %}
+    {% endembed %}
+{% endblock %}
+
+
+{% block apoutchika_media_one_for_collection_row %}
+    {{ form_widget(form) }}
+{% endblock %}

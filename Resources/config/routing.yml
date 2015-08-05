@@ -1,0 +1,7 @@
+apoutchika_media_api:
+    resource: "routing/media.yml"
+    prefix:   /medias
+
+apoutchika_media_ckeditor:
+    resource: "routing/ckeditor.yml"
+    prefix:   /ckeditor

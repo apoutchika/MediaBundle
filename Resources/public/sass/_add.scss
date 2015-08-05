@@ -1,0 +1,135 @@
+.dropzone-content {
+    position: absolute;
+    top: 40px;;
+    left: 10%;
+    right: 10%;
+    min-height: 80%;
+
+    border: 2px dashed $pumice;
+
+
+    .fallback {
+        text-align: center;
+        margin-top: 10%;
+
+        input {
+            margin: 0 5px;
+            width: auto;
+        }
+    }
+
+    .dropzone-text {
+        text-align: center;
+        font-family: ubunturegular, sans-serif;
+
+        h2 {
+            color: $masala;
+            font-family: ubuntubold, sans-serif;
+            text-transform: uppercase;
+            margin-top: 6%;
+            font-size: 18px;
+        }
+
+        .click-here {
+            color: $masala;
+            display: inline-block;
+            border: 2px solid $masala;
+            padding: 10px;
+            margin: auto;
+            margin-top: 3%;
+        }
+
+        .allowed-extensions {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+            .allowed-extensions-title {
+                color: $davySGrey;
+            }
+            .allowed-extensions-list {
+                color: $stack2;
+                max-width: 500px;
+                margin: 20px auto;
+
+            }
+        }
+
+    }
+
+    .dropzone-form form {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        cursor: pointer;
+
+        /* After send media */
+
+        .dropzone-media {
+
+            margin: 15px 10px;
+            text-align: left;
+
+            .preview {
+                float: left;
+                margin-right: 10px;
+                width: 40px;
+                height: 35px;
+
+                img {
+                    max-width: 100%;
+                    height: 100%;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                margin-left: 50px;
+            }
+
+            .error {
+                color: $burntSienna;
+
+                &:before {
+                    content: "✘";
+                }
+            }
+
+            .success {
+                color: $doveGray;
+
+                &:before {
+                    content: "✔";
+                }
+            }
+            
+            .loader {
+                position: relative;
+                display: block;
+                width: 100%;
+                margin-top: 5px;
+                background-color: $blueWhale;
+                height: 4px;
+
+                .loader-status {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+
+                    width: 0%;
+                    background-color: $greenCrayola;
+                }
+
+            }
+        }
+    }
+
+
+}
+

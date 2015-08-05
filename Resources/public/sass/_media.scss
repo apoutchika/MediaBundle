@@ -1,0 +1,33 @@
+
+.media {
+    width: 100%;
+    height: $media-height;
+    background-color: $white;
+    padding-right: 4px;
+    margin-bottom: 8px;
+
+    .name {
+        line-height: $media-height;
+        color: $doveGray;
+        font-family: ubunturegular, sans-serif;
+        padding-left: 18px;
+        padding-right: 4px;
+
+        .preview {
+            float: left;
+            margin: 3px 0;
+            position: relative;
+            left: -15px;
+        }
+    }
+
+    .actions {
+        float: right;
+        margin: 4px 0;
+
+        .btn-remove {
+            line-height: $media-height;
+            padding: 0 10px;
+        }
+    }
+}

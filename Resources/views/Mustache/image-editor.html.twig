@@ -1,0 +1,33 @@
+
+{% verbatim %}
+    <div class="center">
+    {{# media.is_image }}
+        <div class="actions">
+            <a href="#" class="action apoutchika-media-action-rotate-left"><span class="icon icon-rotate-left"></span></a>
+            <a href="#" class="action apoutchika-media-action-rotate-right"><span class="icon icon-rotate-right"></span></a>
+            <a href="#" class="action apoutchika-media-action-mirror-x"><span class="icon icon-mirror-x"></span></a>
+            <a href="#" class="action apoutchika-media-action-mirror-y"><span class="icon icon-mirror-y"></span></a>
+            <a href="#" class="action apoutchika-media-action-focus active txt">{% endverbatim %}{{ 'views.mustache.editor.image.focus'|trans({}, 'ApoutchikaMediaBundle') }}{% verbatim %}</a>
+            <a href="#" class="action apoutchika-media-action-crop txt">{% endverbatim %}{{ 'views.mustache.editor.image.crop'|trans({}, 'ApoutchikaMediaBundle') }}{% verbatim %}</a>
+            <a href="#" class="apoutchika-media-action-valid-crop btn btn-valid"><span class="icon icon-check"></span>{% endverbatim %}{{ 'views.mustache.editor.image.valid'|trans({}, 'ApoutchikaMediaBundle') }}{% verbatim %}</a>
+        </div>
+
+        <p class="info info-focus hide">{% endverbatim %}{{ 'views.mustache.editor.image.help.focus'|trans({}, 'ApoutchikaMediaBundle') }}{% verbatim %}</p>
+        <p class="info info-crop hide">{% endverbatim %}{{ 'views.mustache.editor.image.help.crop'|trans({}, 'ApoutchikaMediaBundle') }}{% verbatim %}</p>
+
+        <div class="apoutchika-media-focus-container">
+            <div class="apoutchika-media-focus">
+                <div 
+                    class="apoutchika-media-focus-pointer"
+                    style="left:{{ media.focus_left }}%;top:{{ media.focus_top }}%;"
+                    draggable="true"><span class="icon icon-focus"></span></div>
+                <img class="apoutchika-media-image" src="{{ media.urls.500x400 }}">
+            </div>
+        </div>
+    </div>
+
+    {{/ media.is_image }}
+    {{^ media.is_image }}
+        {{{ media.html }}}
+    {{/ media.is_image }}
+{% endverbatim %}

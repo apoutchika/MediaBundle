@@ -1,0 +1,81 @@
+global:
+    loading: &LOADING Loading
+    edit: &EDIT Edit
+    add: &ADD Add
+    select: &SELECT Select # Choisir
+    extensionNotAllowed: &EXTENSION_NOT_ALLOWED %extension% extension is not allowed
+    error: &ERROR An error occurred
+
+error:
+    fileNotFound: The file was not found
+    mediaIdNotFound: The media %id% was not found
+    requestMustHasFilter: The request must have "filter" parameter
+    requestMustHasFilterProd: *ERROR
+    requestMustHasCorrectFilter: The request must have "filter" parameter correct 
+    requestMustHasCorrectFilterProd: *ERROR
+    extensionNotAllowed: *EXTENSION_NOT_ALLOWED
+
+js:
+    confirmDelete: Delete this media ?
+    confirmCrop: Crop image ?
+    extensionNotAllowed: *EXTENSION_NOT_ALLOWED
+
+views:
+    ckeditor:
+        image:
+            title: Choose your image
+    form:
+        fields:
+            loadMany: Loading medias
+            loadOne: Loading media
+        fields_base:
+            load: *LOADING
+    mustache:
+        add: 
+            title: Add a media
+            dropMediaHere: Drop your media in this area
+            selectMedia: Select your media
+            orCliqueHere: Or click here
+            allowedExtensions: Allowed extensions
+            load: *LOADING
+            thankWaiting: Thank you for your patience...
+            error: An error has occurred
+        editor:
+            edit: *EDIT
+            image:
+                focus: Focus
+                crop: Crop
+                valid: Confirm
+                help:
+                    focus: Focus allows you to target the most important point of your image. At each move, the new focus is saved.
+                    crop: Crop your image if it is misplaced. To confirm, click the "Confirm" button or double-click on your selection.
+            form:
+                name: Name
+                author: Author
+                description: Description
+                tag: Tags (separated by commas)
+            save: Save
+            cancel: Cancel
+        fields:
+            add: *ADD
+            select: *SELECT
+        lists:
+            title: Medias list
+            search: Search
+            type:
+                all: All
+                image: Image
+                video: Vidéo
+                audio: Audio
+                other: Other
+            add: *ADD
+        media:
+            unselect: Unselect
+            select: *SELECT
+            edit: *EDIT
+            delete: Delete
+    render:
+        other:
+            download: Download the media
+        video:
+            download: Download the video

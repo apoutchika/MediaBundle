@@ -1,0 +1,68 @@
+.list {
+    position: relative;
+    padding: 15px;
+
+    form {
+        .btn-search {
+            float: none;
+            display: inline-block;
+        }
+        margin-bottom: 20px;
+    }
+
+    .list-header {
+        background-color: $silverChalice;
+        margin-bottom: 10px;
+
+        p {
+            font-family: ubunturegular, sans-serif;
+            line-height: 25px;
+            font-size: 14px;
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        .list-header-edit, .list-header-delete, .list-header-status {
+            text-align: center;
+            float: right;
+            border-left: 2px solid $white;
+        }
+
+        .list-header-name {
+            padding-left: 20px;
+        }
+
+        .list-header-edit, .list-header-delete {
+            width: $btn-width + 4px;
+        }
+
+        .list-header-status {
+            width: 60px;
+        }
+    }
+
+    .media {
+        background-color: $mercury;
+
+        .icon {
+            margin: 7px 12px;
+        }
+
+        &.active {
+            background-color: $doveGray;
+
+            .name {
+                color: $white;
+            }
+        }
+
+        .name {
+            cursor: pointer;
+        }
+    }
+
+    .btn-add {
+        float: right;
+        margin-right: 0;
+    }
+}

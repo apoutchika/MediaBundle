@@ -1,0 +1,147 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+
+.edit {
+
+    padding-bottom: 15px;
+
+    form {
+        & > div {
+            margin: 15px;
+
+            label {
+                display: block;
+                color: $davySGrey;
+                margin-bottom: 5px;
+            }
+
+            input, textarea {
+                width: 100%;
+            }
+        }
+
+        .actions .btn {
+            float: right;
+        }
+    }
+
+    & > .right {
+        padding: 10px;
+
+        .center {
+            text-align: left;
+            display: inline-block;
+
+            .actions {
+                @include clearfix;
+                min-width: 355px;
+
+                .action {
+                    display: inline-block;
+                    float: left;
+                    background-color: $doveGray;
+                    border: 1px solid $stack;
+                    text-align: center;
+                    margin: 15px 20px 20px 0;
+                    padding: 6px;
+                    color: $white;
+                    text-decoration: none;
+                    width: 38px;
+                    height: 38px;
+
+
+                    &.txt {
+                        width: auto;
+                        font-size: 12px;
+                        padding: 0 5px;
+                        line-height: 36px;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: $white;
+                        background-color: $greenCrayola;
+                        border: 1px solid $doveGray;
+                    }
+
+                    &.active {
+                        cursor: default;
+                    }
+                }
+            }
+        }
+
+        .apoutchika-media-action-valid-crop {
+            margin: 15px 20px 20px 0;
+            height: 38px;
+            line-height: 23px;
+            display: none;
+
+            @include transition-property(border-color);
+            @include transition-duration(0.8s);
+
+            .icon-check {
+                margin-right: 5px;
+                float: left;
+            }
+        }
+
+        .info {
+            background-color: $greenCrayola;
+            color: $white;
+            padding: 5px 10px;
+            @include border-radius(5px);
+            margin: -8px 20px 10px 10px;
+            position: absolute;
+            z-index: 800;
+            @include box-shadow($doveGray 2px 2px 5px);
+        }
+
+        .apoutchika-media-focus-container {
+            position: relative;
+            display: inline-block;
+
+            .apoutchika-media-focus {
+
+                display: inline-block;
+
+                .apoutchika-media-focus-pointer {
+                    display: block;
+                    position: absolute;
+                    //background-image: url(../images/crop.png);
+                    width: 106px;
+                    height: 106px;
+                    cursor: move;
+                    margin: -53px;
+                }
+
+                img {
+                    display: block;
+                    max-width: 500px;
+                    max-height: 400px;
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 901px) {
+        .right {
+            float: right;
+        }
+        .right, .left {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .right {
+            text-align: center;
+        }
+        .right, .left {
+            width: 100%;
+        }
+    }
+
+}

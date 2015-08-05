@@ -1,0 +1,62 @@
+{% embed 'ApoutchikaMediaBundle:Mustache:modal.html.twig'%}
+    {% trans_default_domain "ApoutchikaMediaBundle" %}
+    {% block title %}{{ 'views.mustache.add.title'|trans }}{% endblock %}
+    {% block content %}
+
+        <div class="dropzone-content">
+            <div class="dropzone-text">
+
+                <h2 class="hide-if-fallback">
+                    {{ 'views.mustache.add.dropMediaHere'|trans }}
+                </h2>
+                <h2 class="fallback">
+                    {{ 'views.mustache.add.selectMedia'|trans }}
+                </h2>
+
+
+                <p class="hide-if-fallback click-here">{{ 'views.mustache.add.orCliqueHere'|trans }}</p>
+
+                <div class="allowed-extensions">
+                    <p class="allowed-extensions-title">{{ 'views.mustache.add.allowedExtensions'|trans }} :</p>
+                    <p class="allowed-extensions-list">{{ '{{ allowedExtensions }}' }}</p>
+                </div>
+            </div>
+            <div class="dropzone-form">
+                <form 
+                    action="{{ path('apoutchika_media_api_media_add') }}" 
+                    class="apoutchika-media-dropzone-form"
+                    enctype="multipart/form-data"
+                    method="POST"
+                    >
+                    <input type="hidden" name="filter" value="{{ '{{ filter }}' }}">
+                    <div class="fallback">
+                        <input type="file" name="file" /><input type="button" value="Envoyer" />
+                        <iframe 
+                            width="0"
+                            height="0"
+                            scrolling="no"
+                            frameborder="0"
+                            id="my_iframe" 
+                            name="my_iframe"></iframe>
+                    </div>
+                </form>
+            </div>
+
+
+            <div id="dz-view" class="hide">
+                <div class="dropzone-media clearfix">
+                    <div class="preview">
+                        <span class="dz-thumbnail"></span>
+                    </div>
+                    <p class="dz-status">
+                        <span class="dz-name"></span>
+                        <span class="dz-error-message"></span>
+                        <span class="loader">
+                            <span class="loader-status"></span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+    {% endblock %}
+{% endembed %}

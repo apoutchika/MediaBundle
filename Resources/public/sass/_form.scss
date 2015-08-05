@@ -1,0 +1,42 @@
+
+
+input, select, textarea {
+    border: 1px solid $doveGray;
+    display: inline-block;
+    font-family: ubunturegular, sans-serif;
+    line-height: 34px;
+    padding: 0 8px;
+    color: $davySGrey;
+    height: 34px;
+    background-color: $white;
+    width: $select-width;
+    font-size: 14px;
+}
+
+textarea {
+    height: 100px;
+    line-height: 18px;
+    padding: 8px;
+}
+
+.select-wrapper {
+    position: relative;
+    top: -1px;
+    width: $select-width;
+    display: inline-block;
+    overflow: hidden;
+    background-image: url(../images/arrow.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    border: 1px solid $doveGray;
+    vertical-align: middle;
+    height: 34px;
+    margin-left: 4px;
+
+
+    select {
+        background: none;
+        border: 0;
+        width: $select-width + 20px;
+    }
+}
