@@ -14,7 +14,9 @@ namespace Apoutchika\MediaBundle\Listener;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\Templating\Helper\CoreAssetsHelper;
+use Symfony\Component\Templating\Helper\HelperInterface;
 use Symfony\Bundle\TwigBundle\TwigEngine;
+use Symfony\Component\HttpKernel\HttpKernel;
 
 /**
  * MediaContentListener.
@@ -24,7 +26,7 @@ use Symfony\Bundle\TwigBundle\TwigEngine;
 class MediaContentListener
 {
     /**
-     * @var CoreAssetsHelper
+     * @var HelperInterface 
      */
     protected $assetsHelper;
 
@@ -54,9 +56,9 @@ class MediaContentListener
     }
 
     /**
-     * @param CoreAssetsHelper $assetsHelper
+     * @param HelperInterface $assetsHelper
      */
-    public function setAssetsHelper(CoreAssetsHelper $assetsHelper)
+    public function setAssetsHelper(HelperInterface $assetsHelper)
     {
         $this->assetsHelper = $assetsHelper;
     }
@@ -79,7 +81,7 @@ class MediaContentListener
      */
     public function addContent(FilterResponseEvent $event)
     {
-        if (!$event->isMasterRequest()) {
+        if (HttpKernel::MASTER_REQUEST != $event->getRequestType()) {
             return;
         }
 

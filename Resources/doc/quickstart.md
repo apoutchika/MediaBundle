@@ -25,12 +25,12 @@ class Product
     //...
 
     /**
-     * @ORM\ManyToOne(targetEntity="\Kamakle\MediaBundle\Entity\Media")
+     * @ORM\ManyToOne(targetEntity="\Acme\DefaultBundle\Entity\Media")
      */
     private $media;
 
     /**
-     * @ORM\ManyToMany(targetEntity="\Kamakle\MediaBundle\Entity\Media")
+     * @ORM\ManyToMany(targetEntity="\Acme\DefaultBundle\Entity\Media")
      */
     private $medias;
 
