@@ -23,7 +23,6 @@
         "knplabs/gaufrette": "^0.1.9",
         "jms/serializer": "^0.16.0"
     },
-    "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
