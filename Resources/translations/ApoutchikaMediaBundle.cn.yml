@@ -51,9 +51,8 @@ views:
                     crop: 裁减您的图片如果图片构图不够理想。 如需确认此操作， 请点击按键“完成” 或在您的新构图框内，双击图片
             form:
                 name: 姓名
-                author: 作者
                 description: 介绍
-                tag: 关键字 (用逗号隔开)
+                alt: 替代文本
             save: 保存
             cancel: 取消
         fields:

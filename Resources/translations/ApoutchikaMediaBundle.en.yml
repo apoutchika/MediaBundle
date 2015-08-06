@@ -51,9 +51,8 @@ views:
                     crop: Crop your image if it is misplaced. To confirm, click the "Confirm" button or double-click on your selection.
             form:
                 name: Name
-                author: Author
                 description: Description
-                tag: Tags (separated by commas)
+                alt: Alternative text
             save: Save
             cancel: Cancel
         fields:
