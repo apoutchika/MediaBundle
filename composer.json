@@ -1,6 +1,6 @@
 {
     "name": "apoutchika/media-bundle",
-    "description": "Symfony SonataMediaBundle",
+    "description": "Symfony ApoutchikaMediaBundle",
     "keywords": ["symfony", "media", "bundle", "imagine", "upload", "file", "form"],
     "license": "MIT",
     "authors": [
