@@ -1,6 +1,8 @@
 ApoutchikaMediaBundle
 =====================
 
+[![Build Status](http://travis-ci.org/apoutchika/MediaBundle.png)](http://travis-ci.org/#!/apoutchika/MediaBundle)
+
 
 The ApoutchikaMediaBundle add complete gestion of medias (uploaded) for your
 users.
