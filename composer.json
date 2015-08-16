@@ -21,7 +21,8 @@
         "symfony/form": "~2.3",
         "imagine/imagine": "~0.5.0",
         "knplabs/gaufrette": "^0.1.9",
-        "jms/serializer": "^0.16.0"
+        "jms/serializer": "^0.16.0",
+        "doctrine/orm": "~2.3"
     },
     "extra": {
         "branch-alias": {
