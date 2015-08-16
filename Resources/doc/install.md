@@ -157,7 +157,7 @@ mkdir web/medias && chmod -R 777 web/medias
 Navigate :
 ----------
 
-* [Installation](install.md)
+* Installation
 * [Quick start](quickstart.md)
 * [Contexts](contexts.md)
 * [Render media](rendermedia.md)

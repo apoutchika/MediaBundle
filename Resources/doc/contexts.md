@@ -66,7 +66,7 @@ Navigate :
 
 * [Installation](install.md)
 * [Quick start](quickstart.md)
-* [Contexts](contexts.md)
+* Contexts
 * [Render media](rendermedia.md)
 * [Security](security.md)
 * [Gaufrette](gaufrette.md)

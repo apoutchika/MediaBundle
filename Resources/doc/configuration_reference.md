@@ -41,4 +41,4 @@ Navigate :
 * [Ckeditor](ckeditor.md)
 
 * [Exemple](exemple.md)
-* [Configuration reference](configuration_reference.md)
+* Configuration reference

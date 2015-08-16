@@ -125,7 +125,7 @@ Navigate :
 * [Installation](install.md)
 * [Quick start](quickstart.md)
 * [Contexts](contexts.md)
-* [Render media](rendermedia.md)
+* Render media
 * [Security](security.md)
 * [Gaufrette](gaufrette.md)
 * [Ckeditor](ckeditor.md)

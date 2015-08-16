@@ -59,7 +59,7 @@ Navigate :
 * [Quick start](quickstart.md)
 * [Contexts](contexts.md)
 * [Render media](rendermedia.md)
-* [Security](security.md)
+* Security
 * [Gaufrette](gaufrette.md)
 * [Ckeditor](ckeditor.md)
 

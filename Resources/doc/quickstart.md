@@ -99,7 +99,7 @@ Navigate :
 ----------
 
 * [Installation](install.md)
-* [Quick start](quickstart.md)
+* Quick start
 * [Contexts](contexts.md)
 * [Render media](rendermedia.md)
 * [Security](security.md)

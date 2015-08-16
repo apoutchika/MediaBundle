@@ -40,7 +40,7 @@ Navigate :
 * [Contexts](contexts.md)
 * [Render media](rendermedia.md)
 * [Security](security.md)
-* [Gaufrette](gaufrette.md)
+* Gaufrette
 * [Ckeditor](ckeditor.md)
 
 * [Exemple](exemple.md)

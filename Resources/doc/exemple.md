@@ -99,5 +99,5 @@ Navigate :
 * [Gaufrette](gaufrette.md)
 * [Ckeditor](ckeditor.md)
 
-* [Exemple](exemple.md)
+* Exemple
 * [Configuration reference](configuration_reference.md)

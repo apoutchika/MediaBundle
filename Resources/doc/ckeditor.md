@@ -85,7 +85,7 @@ Navigate :
 * [Render media](rendermedia.md)
 * [Security](security.md)
 * [Gaufrette](gaufrette.md)
-* [Ckeditor](ckeditor.md)
+* Ckeditor
 
 * [Exemple](exemple.md)
 * [Configuration reference](configuration_reference.md)
