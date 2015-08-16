@@ -23,16 +23,16 @@ Screenshots
 -----------
 
 ### Fields
-![Fields](Resources/public/images/screenshot/fields.png)
+![Fields](https://github.com/apoutchika/MediaBundle/raw/master/Resources/public/images/screenshot/fields.png)
 
 ### Editor for images
-![Editor for images](Resources/public/images/screenshot/editor.png)
+![Editor for images](https://github.com/apoutchika/MediaBundle/raw/master/Resources/public/images/screenshot/editor.png)
 
 ### List
-![List](Resources/public/images/screenshot/list.png)
+![List](https://github.com/apoutchika/MediaBundle/raw/master/Resources/public/images/screenshot/list.png)
 
 ### Add new media
-![Add new media](Resources/public/images/screenshot/add.png)
+![Add new media](https://github.com/apoutchika/MediaBundle/raw/master/Resources/public/images/screenshot/add.png)
 
 
 Documentation
