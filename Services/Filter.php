@@ -83,7 +83,7 @@ class Filter
     {
         $filters = $this->session->get('filters', array());
         
-        return !isset ($filters[$filterKey]);
+        return isset ($filters[$filterKey]);
 
     }
 }
