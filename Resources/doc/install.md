@@ -7,7 +7,7 @@ Install the bundle
 ------------------
 
 ```bash
-composer require apoutchika/mediabundle
+composer require apoutchika/media-bundle
 ```
 
 Active In AppKernel
