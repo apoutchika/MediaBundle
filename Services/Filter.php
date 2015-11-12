@@ -65,7 +65,7 @@ class Filter
     {
         $filters = $this->session->get('filters', array());
 
-        if (!isset($filters[$filterKey])) {
+        if (!array_key_exists ($filterKey, $filters)) {
             return null;
         }
 
@@ -83,7 +83,6 @@ class Filter
     {
         $filters = $this->session->get('filters', array());
         
-        return isset ($filters[$filterKey]);
-
+        return array_key_exists ($filterKey, $filters);
     }
 }
