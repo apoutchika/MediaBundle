@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Apoutchika\MediaBundle\Services\ContextsManipulator;
 use Apoutchika\MediaBundle\Services\Filter;
-
+use Apoutchika\MediaBundle\Form\Type\ApoutchikaMediaOneForCollectionType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\AbstractTypeExtension;
 
@@ -78,7 +78,7 @@ class ApoutchikaMediaManyType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'type' => 'apoutchika_media_one_for_collection',
+            'entry_type' => ApoutchikaMediaOneForCollectionType::class,
             'allow_add' => true,
             'allow_delete' => true,
             'contexts' => false,
