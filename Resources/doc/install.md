@@ -1,13 +1,13 @@
 Installation
 ============
 
-This is the basic installation/configuration
+This is the basic installation/configuration for **Symfony2**
 
 Install the bundle
 ------------------
 
 ```bash
-composer require apoutchika/media-bundle
+composer require apoutchika/media-bundle:dev-sf2
 ```
 
 Active In AppKernel
