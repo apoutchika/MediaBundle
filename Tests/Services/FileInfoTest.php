@@ -63,7 +63,7 @@ class FileInfoTest extends Base
             ->will($this->returnValue($mimeType));
 
         $splFileInfo->expects($this->any())
-            ->method('getClientMimeType')
+            ->method('getMimeType')
             ->will($this->returnValue($mimeType));
 
         $this->testClass->setFile($splFileInfo);
