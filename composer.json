@@ -22,7 +22,7 @@
         "symfony/form": "^2.3 || ^3.0",
         "imagine/imagine": "^0.6",
         "knplabs/gaufrette": "^0.2",
-        "jms/serializer": "^1.1",
+        "jms/serializer": "^0.16 || ^1.1",
         "doctrine/orm": "^2.5"
     },
     "extra": {
