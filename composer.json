@@ -17,13 +17,13 @@
     ],
     "require": {
         "php": "^5.5.9 || ^7.0",
-        "doctrine/orm": "^2.5"
+        "doctrine/orm": "^2.5",
         "imagine/imagine": "^0.5",
         "jms/serializer": "^0.16 || ^1.1",
         "knplabs/gaufrette": "^0.1.9",
         "symfony/form": "^2.3 || ^3.0",
         "symfony/framework-bundle": "^2.3 || ^3.0",
-        "symfony/twig-bundle": "^2.3 || ^3.0",
+        "symfony/twig-bundle": "^2.3 || ^3.0"
     },
     "extra": {
         "branch-alias": {
