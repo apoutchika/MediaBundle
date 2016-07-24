@@ -12,11 +12,14 @@
 namespace Apoutchika\MediaBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Apoutchika\MediaBundle\Services\ContextsManipulator;
 use Apoutchika\MediaBundle\Services\Filter;
+
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\AbstractTypeExtension;
 
 /**
  * class ApoutchikaMediaManyType.
@@ -72,7 +75,7 @@ class ApoutchikaMediaManyType extends AbstractType
     /**
      * {@inheritDoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'type' => 'apoutchika_media_one_for_collection',
@@ -90,7 +93,15 @@ class ApoutchikaMediaManyType extends AbstractType
      */
     public function getParent()
     {
-        return 'collection';
+        return CollectionType::class;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getExtendedType()
+    {
+        return CollectionType::class;
     }
 
     /**

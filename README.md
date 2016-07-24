@@ -3,7 +3,7 @@ ApoutchikaMediaBundle
 
 [![Build Status](http://travis-ci.org/apoutchika/MediaBundle.png)](http://travis-ci.org/#!/apoutchika/MediaBundle)
 
-_:warning: This branch is for **Symfony2**, if you want install this bundle for Symfony3, [see on sf3 branch](https://github.com/apoutchika/MediaBundle/tree/sf3)_
+_:warning: This branch is for **Symfony3**, if you want install this bundle for Symfony2, [see on sf2 branch](https://github.com/apoutchika/MediaBundle/tree/sf2)_
 
 The ApoutchikaMediaBundle add complete gestion of medias (uploaded) for your
 users.

@@ -12,9 +12,12 @@
 namespace Apoutchika\MediaBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormBuilderInterface;
 use Apoutchika\MediaBundle\Form\DataTransformer\MediaToIdTransformer;
+
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\AbstractTypeExtension;
 
 /**
  * class ApoutchikaMediaOneForCollectionType.
@@ -65,7 +68,7 @@ class ApoutchikaMediaOneForCollectionType extends AbstractType
     /**
      * {@inheritDoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'contexts' => false,
@@ -79,7 +82,15 @@ class ApoutchikaMediaOneForCollectionType extends AbstractType
      */
     public function getParent()
     {
-        return 'hidden';
+        return HiddenType::class;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getExtendedType()
+    {
+        return HiddenType::class;
     }
 
     /**

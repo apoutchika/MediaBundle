@@ -15,7 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\Templating\Helper\CoreAssetsHelper;
 use Symfony\Component\Templating\Helper\HelperInterface;
-use Symfony\Bundle\TwigBundle\TwigEngine;
+use Symfony\Component\Templating\DelegatingEngine;
+
 use Symfony\Component\HttpKernel\HttpKernel;
 
 /**
@@ -31,7 +32,7 @@ class MediaContentListener
     protected $assetsHelper;
 
     /**
-     * @var TwigEngine
+     * @var DelegatingEngine
      */
     protected $templating;
 
@@ -64,9 +65,9 @@ class MediaContentListener
     }
 
     /**
-     * @param TwigEngine $templating
+     * @param DelegatingEngine $templating
      */
-    public function setTemplating(TwigEngine $templating)
+    public function setTemplating(DelegatingEngine $templating)
     {
         $this->templating = $templating;
     }

@@ -21,8 +21,7 @@ services:
 
     apoutchika_media.factory.imagine:
         class: Imagine\Image\ImagineInterface
-        factory_class: Apoutchika\MediaBundle\Factory\ImagineFactory
-        factory_method: get
+        factory: [Apoutchika\MediaBundle\Factory\ImagineFactory, get]
         arguments: ["%apoutchika_media.driver%"]
             
     apoutchika_media.manipulator.filesystems:
@@ -69,7 +68,7 @@ services:
             - [ setContexts, [ "%apoutchika_media.contexts%" ] ]
             - [ setFilter, [ "@apoutchika_media.filter" ] ]
         tags:
-            - { name: form.type, alias: apoutchika_media_one }
+            - { name: form.type }
 
     apoutchika_media.form.media_many:
         class: Apoutchika\MediaBundle\Form\Type\ApoutchikaMediaManyType
@@ -77,7 +76,7 @@ services:
             - [ setContexts, [ "%apoutchika_media.contexts%" ] ]
             - [ setFilter, [ "@apoutchika_media.filter" ] ]
         tags:
-            - { name: form.type, alias: apoutchika_media_many }
+            - { name: form.type }
 
     apoutchika_media.form.media_one_for_collection:
         class: Apoutchika\MediaBundle\Form\Type\ApoutchikaMediaOneForCollectionType
@@ -85,4 +84,4 @@ services:
             - [ setEntityManager, [ "@doctrine.orm.entity_manager" ] ]
             - [ setMediaClass, [ "%apoutchika_media.media_class%" ] ]
         tags:
-            - { name: form.type, alias: apoutchika_media_one_for_collection }
+            - { name: form.type }

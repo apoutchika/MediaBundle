@@ -1,13 +1,13 @@
 Installation
 ============
 
-This is the basic installation/configuration for **Symfony2**
+This is the basic installation/configuration for **Symfony3**
 
 Install the bundle
 ------------------
 
 ```bash
-composer require apoutchika/media-bundle:dev-sf2
+composer require apoutchika/media-bundle:dev-sf3
 ```
 
 Active In AppKernel
@@ -85,13 +85,14 @@ Configure it
 # Active translator
 framework:
     translator:      { fallback: "%locale%" }
+    templating:
+        engines: ['twig', 'php']
 
 
 # Add form type
 twig:
-    form:
-        resources:
-            - 'ApoutchikaMediaBundle:Form:fields.html.twig'
+    form_themes:
+        - 'ApoutchikaMediaBundle:Form:fields.html.twig'
 
 
 # Configure ApoutchikaMedia
@@ -135,14 +136,14 @@ Install assets
 --------------
 
 ```bash
-$ app/console assets:install web --symlink
+$ bin/console assets:install web --symlink
 ```
 
 Update database
 --------------
 
 ```bash
-$ app/console doctrine:schema:update --force
+$ bin/console doctrine:schema:update --force
 ```
 (Or use DoctrineMigrations)
 
