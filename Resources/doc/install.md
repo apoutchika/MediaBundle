@@ -85,13 +85,14 @@ Configure it
 # Active translator
 framework:
     translator:      { fallback: "%locale%" }
+    templating:
+        engines: ['twig', 'php']
 
 
 # Add form type
 twig:
-    form:
-        resources:
-            - 'ApoutchikaMediaBundle:Form:fields.html.twig'
+    form_themes:
+        - 'ApoutchikaMediaBundle:Form:fields.html.twig'
 
 
 # Configure ApoutchikaMedia
@@ -135,14 +136,14 @@ Install assets
 --------------
 
 ```bash
-$ app/console assets:install web --symlink
+$ bin/console assets:install web --symlink
 ```
 
 Update database
 --------------
 
 ```bash
-$ app/console doctrine:schema:update --force
+$ bin/console doctrine:schema:update --force
 ```
 (Or use DoctrineMigrations)
 

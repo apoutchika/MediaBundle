@@ -89,7 +89,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
 
                 ->integerNode('limit')
-                    ->cannotBeEmpty()
+                    //->cannotBeEmpty()
                     ->defaultValue(null)
                 ->end()
 
@@ -140,7 +140,7 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                                 ->integerNode('port')
                                     ->defaultValue(21)
-                                    ->cannotBeEmpty()
+                                    //->cannotBeEmpty()
                                 ->end()
                                 ->scalarNode('username')
                                     ->isRequired()
