@@ -25,11 +25,6 @@
         "symfony/framework-bundle": "^3.0",
         "symfony/twig-bundle": "^3.0"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        }
-    },
     "minimum-stability": "dev",
     "suggest": {
         "egeloen/ckeditor-bundle": "Use ApoutchikaMediaBundle with CKEditor"
