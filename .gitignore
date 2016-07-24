@@ -1,2 +1,3 @@
 /Resources/public/.sass-cache/*
 /vendor/
+/composer.lock
